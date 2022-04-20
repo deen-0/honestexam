@@ -1,0 +1,44 @@
+
+#root{
+height: 100%;
+
+}
+.Register{
+  height: 100;
+  align-items: center;
+  align-content: center;
+  margin-top: 10%;
+}
+.row{
+  height :100%
+}
+.column {
+  float: left;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  align-content: center;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  height: 400px;
+  align-content: center;
+  grid-template-columns: auto auto;
+  gap: 200px;
+  background-color: transparent;
+  padding: 50px;
+}
+
+.grid-container > button {
+ 
+ background-color: white;
+ border-color: black;
+ width: 40%;
+}
