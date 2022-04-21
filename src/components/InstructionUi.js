@@ -1,26 +1,45 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
-import { getQuestions,getTestInfo} from "../store/actions"
+import { getQuestions} from "../store/actions"
+
 
 
 export default function InstructionUI() {
     
-  // const testId=4;
-  const userId=7;
+  
   const testId=useSelector((state)=>state.testId)
-  let questions=useSelector((state)=>state.getQuestions);
-  // let userId=useSelector((state)=>state.user.value);
+  let userid=useSelector((s)=>s.user.id);
+  let questions=useSelector((state)=>state.type);
+  
   const d=useDispatch();
   let navigate = useNavigate();
+
     const question =async()=>{ 
-      const response=await fetch(`http://localhost:8080/getQuestions/${testId}`, { method: 'GET' })
-      let t= await response.json();
-    questions=d(getQuestions(t));
-         let path = `TestUi`; 
-         navigate(path);
-        console.log("i am proceeding")
+      
+      let y= await adduser();
+      if(y==0){
+        await getq();
+        let path = `TestUi`; 
+        navigate(path);
+       console.log("i am proceeding");
+       
+      }else{alert("you already appeared in exam"); navigate(-1)}
+     
     }
+const getq=async()=>{
+    const response=await fetch(`http://localhost:8080/getQuestions/${testId}`, { method: 'GET' })
+    let t= await response.json();
+    questions=d(getQuestions(t));
+ 
+}
+    const adduser=async()=>{
+      const response=await fetch(`http://localhost:8080/user/giveTest/${userid}/${testId}`, { method: 'GET' })
+      let y= await response.json();
+      console.log(y);
+      return y
+    }
+
 
     let tinfo=useSelector((state)=>state.testInfo);
 

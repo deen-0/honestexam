@@ -23,7 +23,7 @@ const handleChange =(e) => {
   const value =e.target.value;
   setUser({...user,[e.target.name] : value});
 }; 
-  const userId="1";
+
   //functoin for validating user
   const getUser=(e)=>{
     storeUser=d(saveUser(user));
@@ -75,8 +75,7 @@ if(response==null){ alert("check your Password");}
   
          if(resp.data){
            alert("Account created  Login-in")
-           let path = `UserUi`; 
-           navigate(path);
+          
 
          }else{alert("email already exist")}
       } catch (err) {

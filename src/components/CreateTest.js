@@ -39,6 +39,7 @@ const submitTest = async () => {
       key=d(setTestId(resp.data));
         setinfo(resp.data);
         key=d(setTestId(resp.data));
+        alert("this is your test key please save it " +resp.data)
         setx(1);
   } catch (err) {
       // Handle Error Here
@@ -56,7 +57,7 @@ const response=await fetch(`http://localhost:8080/test/info/${x}`, { method: 'GE
 let tinfo=useSelector((state)=>state.testInfo);
   if(x==0){
   return (
-    <div>
+    <>
     <div className="container my-10"><h1 className='my-3'>Fill the Test Info</h1>
     <div class="input-group input-group-lg">
 
@@ -78,7 +79,7 @@ let tinfo=useSelector((state)=>state.testInfo);
 <button type="button" class="btn btn-success btn-lg my-5" onClick={submitTest}>Create Test</button>
 </div>
     </div>
-    </div>
+    </>
   );}else if(x==1){
     return(
       <>
@@ -112,8 +113,24 @@ let tinfo=useSelector((state)=>state.testInfo);
 </div>
 
     <div className="container my-10 text-center" ><h1 className='my-3'>Add Questions to your Test</h1>
-
 </div>
+
+
+<div class="form-group row">
+  <div class="col-xs-2">
+    <label for="ex1">col-xs-2</label>
+    <input class="form-control" id="ex1" type="text"/>
+  </div>
+  <div class="col-xs-3">
+    <label for="ex2">col-xs-3</label>
+    <input class="form-control" id="ex2" type="text"/>
+  </div>
+  <div class="col-xs-4">
+    <label for="ex3">col-xs-4</label>
+    <input class="form-control" id="ex3" type="text"/>
+  </div>
+</div>
+ 
 
       </>
     );
