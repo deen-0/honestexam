@@ -3,12 +3,10 @@ import { useSelector,useDispatch } from 'react-redux'
 
 
 export default function HomeIntro() {
-  // let cuser=useSelector((state)=>state);
-
-  // console.log(cuser.user.password);
+ 
   return (<>
-    {/* <div>{cuser.user.password}</div> */}
-    <div>HomeIntro</div>
+     <div className="container h-80 w-25 my-50 mx-10"> <div>HomeIntro</div></div>
+   
     </>
   )
 }

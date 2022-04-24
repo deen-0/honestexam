@@ -131,26 +131,25 @@ if(response==null){ alert("check your Password");}
     </div>
 
 </>
-  )}else{return ( <>
+  )}else{return ( <><div className="container text-center">
      <div className="Register">
       <form action="" className="formregister" onSubmit={getUser}>
-      <h1 style={{fontWeight : 'bold' , textAlign:'center'}} >Login</h1>
-     
-        <div className="form-row">
-					<label htmlFor="email">Email</label>
-					<input type="email" name="email" id="email" className="inputEmail" value={user.email} onChange={(e) => handleChange(e)}/>
+      
+        <div className="form-row  my-2">
+				<h6>Email</h6>
+					<input type="email" name="email" id="email" className="inputEmail input-lg" value={user.email} onChange={(e) => handleChange(e)}/>
 				</div>
-        <div className="form-row">
-					<label htmlFor="password">Password</label>
+        <div className="form-row my-2 input-lg">
+        <h6>Password</h6>
 					<input type="password" name="password" id="password" className="inputPassword" value={user.password} onChange={(e) => handleChange(e)}/>
 				</div>
        
-<div className="container"><button className="btn btn-lg btn-primary btn-block" style={{}} type="submit" onClick={getUser} >Login</button></div>
+<div className="container"><button className="btn btn-lg btn-primary btn-block my-2" style={{}} type="submit" onClick={getUser} >Login</button></div>
 
       </form>
     </div>
 
-
+</div>
 
  
    

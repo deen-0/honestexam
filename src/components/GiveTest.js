@@ -3,14 +3,20 @@ import QuestionUI from './QuestionUI';
 import UserNav from './UserNav'
 import { useSelector,useDispatch } from 'react-redux';
 import { getTestInfo, setTestId } from '../store/actions';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,navigate } from 'react-router-dom';
+import HomeUi from './HomeUi';
 
 
 
 export default function UserUi(props){
-    
-     let key=useSelector((s)=>s.type)
-const d=useDispatch();
+
+  let key=useSelector((s)=>s.type)
+  let user=useSelector((s)=>s.user.id);
+  
+  const d=useDispatch();
+   
+
+  
       //below function get test id entered by user
       const [input,setinput]=useState("");
     const getTestId =(e) => {setinput(e.target.value);
@@ -25,7 +31,7 @@ const d=useDispatch();
 
     
       const validatedTestId= async()=>{
-         
+        if(user==="" || user===undefined){alert("you are logged out"); navigate(-1); }else{
         const respo=await fetch(`http://localhost:8080/user/validatekey/${input}`, { method: 'GET' })
         let t= await respo.json();
        console.log("i am validating test  "+t);
@@ -37,7 +43,7 @@ const d=useDispatch();
         d(getTestInfo(t));
         startTest();}
        else setValidation(0);
-       } 
+       } }
       
        let navigate = useNavigate(); 
        const startTest = () =>{ 

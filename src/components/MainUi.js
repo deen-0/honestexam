@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, } from 'react'
+import { useSelector } from 'react-redux';
 import { useNavigate} from 'react-router-dom';
 import UserUi from './GiveTest';
 
 export default function MainUi() {
   let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `GiveTest`; 
-    navigate(path);
+  const routeChange = () =>{  if(user==="" || user===undefined){alert("you are logged out"); navigate(-1); }
+  else { let path = `GiveTest`; 
+    navigate(path);}
   }
+  let user=useSelector((s)=>s.user.id);
   const routeCreateTest = () =>{ 
-    let path = `CreateTest`; 
-    navigate(path);
+    if(user==="" || user===undefined){alert("you are logged out"); navigate(-1); }
+    else {let path = `CreateTest`; 
+    navigate(path);}
   }
   return (
     <div className="grid-container">

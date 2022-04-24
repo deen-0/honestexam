@@ -6,6 +6,7 @@ import MainUi from './MainUi'
 import { Route, Routes } from 'react-router-dom'
 import GiveTest from "./GiveTest"
 import CreateTest from './CreateTest'
+import SubmitQuestion from './SubmitQuestion'
 
 export default function UserUi() {
     
@@ -22,6 +23,7 @@ export default function UserUi() {
 <Route exact path="/" element={<MainUi/>}></Route>
 <Route exact path="/GiveTest" element={<GiveTest/>}></Route>
 <Route exact path="/CreateTest" element={<CreateTest/>}></Route>
+<Route exact path="/CreateTest/submitquestion" element={<SubmitQuestion/>}></Route>
 </Routes>
 
 

@@ -23,7 +23,8 @@ let name=useSelector((s)=>s.user.firstName)+"  "+useSelector((s)=>s.user.lastNam
           <Link className="nav-link active" aria-current="page" to="/UserUi">Hey, {name}</Link>
         </li>
         </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        <Link className="nav-link active" aria-current="page" to="/" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button></Link>
       </div>
 </nav>
     </>

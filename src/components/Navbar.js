@@ -21,7 +21,7 @@ export default function Navbar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link active" aria-current="page" to="/" >Home</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/About">About Us</Link>
@@ -29,10 +29,7 @@ export default function Navbar(props) {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/ContactUs">Contact Us</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/UserUi">UserUi</Link>
-        </li>
-       
+        
         
       </ul>
       <form className="d-flex">

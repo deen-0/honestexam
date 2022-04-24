@@ -25,16 +25,16 @@ Changex =(e)=>{
   return (
     <>
 
-    {/* <Router>  */}
+    
     <Navbar x={x} Changex={Changex} btntitle={btntitle}/>
        <Routes>
 <Route exact path="/" element={  <div className="row">
-             <div className="column left">
-                <HomeIntro/>
+             <div className="col-8">
+               <HomeIntro/>
                  </div>
 
 
-                <div className="column right"> 
+                <div className="col-4"> 
              <Register status={x}/>
             </div>
        
