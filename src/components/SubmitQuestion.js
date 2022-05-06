@@ -120,7 +120,7 @@ navigate(path);
 
 <div className="input-group-lg my-3">
   <span className="input-group-text align-top">Question</span>
-  <textarea className="form-control" name='question' value={Question.question} onChange={(e) => handleque(e)} placeholder='Enter a Brief description of your test' aria-label="With textarea"></textarea>
+  <textarea className="form-control" name='question' value={Question.question} onChange={(e) => handleque(e)} placeholder='Enter a Question here' aria-label="With textarea"></textarea>
 </div>
 
 

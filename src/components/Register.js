@@ -104,31 +104,32 @@ if(response==null){ alert("check your Password");}
  
   
   if(!props.status){
-  return (<>
+  return (<> 
     <div className="Register">
+    <div className="container text-center">
       <form action="" className="formregister" onSubmit={createUser}>
       <h1 style={{fontWeight : 'bold' , textAlign:'center'}} >Register</h1>
-      <div className="form-row">
-					<label htmlFor="firstName">First Name</label>
+      <div className="form-row my-2">
+					<label htmlFor="firstName">First Name &nbsp;</label>
 					<input type="text" name="firstName" id="firstName" className="input-text" value={user.firstName} onChange={(e) => handleChange(e)}/>
 				</div>
         <div className="form-row">
-					<label htmlFor="lastName">Last Name</label>
+					<label htmlFor="lastName">Last Name&nbsp;&nbsp;</label>
 					<input type="text" name="lastName" id="Lastname" className="input-text" value={user.lastName} onChange={(e) => handleChange(e)}/>
 				</div>
-        <div className="form-row">
-					<label htmlFor="email">Email</label>
+        <div className="form-row my-2">
+					<label htmlFor="email">Email&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;   &nbsp; &nbsp;</label>
 					<input type="email" name="email" id="email" className="inputEmail" value={user.email} onChange={(e) => handleChange(e)}/>
 				</div>
         <div className="form-row">
-					<label htmlFor="password">Password</label>
+					<label htmlFor="password">Password &nbsp;&nbsp;</label>
 					<input type="password" name="password" id="password" className="inputPassword" value={user.password} onChange={(e) => handleChange(e)}/>
 				</div>
-       
-<div className="container"><button className="btn btn-lg btn-primary btn-block" style={{}} type="submit" onClick={createUser} >Register</button></div>
       
+<div className="container"><button className="btn btn-lg btn-primary btn-block my-3" style={{}} type="submit" onClick={createUser} >Register</button></div>
+
       </form>
-    </div>
+    </div></div>
 
 </>
   )}else{return ( <><div className="container text-center">
